@@ -45,7 +45,7 @@ async def verify(part1:str,part2:str,request: Request):
         return EmptyResponse()
     if data.latest_otp == key:
         return EmptyResponse()
-    scheme = request.url.scheme
+    scheme = request.headers.get('x-forwarded-scheme') or request.url.scheme
     netloc = request.url.netloc
     data.latest_otp = key
     data.token = random_base32(128)
