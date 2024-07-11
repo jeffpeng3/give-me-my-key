@@ -1,0 +1,18 @@
+[project]
+name = "give-me-my-key"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "jeff", email = "jeffpeng2012@gmail.com" }
+]
+dependencies = [
+    "fastapi>=0.111.0",
+    "pyotp>=2.9.0",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[tool.rye]
+managed = true
+virtual = true
+dev-dependencies = []
