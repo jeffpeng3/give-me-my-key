@@ -77,6 +77,7 @@ async def getfile(part1:str,part2:str,provided_token:str,filename:str):
 @app.middleware("http")
 async def add_process_time_header(request: Request, call_next):
     print("========= IP INFO =========")
+    print(request.headers)
     print(request.headers.get("X-Forwarded-For") or request.client.host or request.headers.get("host"))
     response = await call_next(request)
     return response
